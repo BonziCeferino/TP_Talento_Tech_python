@@ -7,8 +7,7 @@ import BaseDatos
 BaseDatos.conexion_base_datos()  # Me vinculo a la base de datos de los Productos
 BaseDatos.conexion_usuarios()    # Creo y vinculo la base de datos de los Usuarios
 Interfas.mensaje_bienvenida()   
-while True: 
-    Interfas.iniciar_sesion() 
+while True:  
     usuario = Programacion.iniciar_sesion()        # Registro, creo o inicio con usuario creado
     # Menú principal 
     while True:
@@ -29,5 +28,8 @@ while True:
             case "6":
                 Programacion.cerrando_programa()
             case _:
-                print("Opción no válida.")
-                input("Presione Enter para continuar...")
+                Interfas.limpiar_pantalla()
+                Interfas.estilo("Opción no válida.")
+                Interfas.estilo("Presione Enter para continuar...")
+                input()
+
